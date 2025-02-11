@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.music-container{
+    background: linear-gradient(to right, pink, blue);
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.music-container .heading{
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: transparent ;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 100px;
+    border: 1px solid black;
+}
+.heading h2{
+    color: rgb(137, 231, 255);
+    font-family: 'Roboto', serif;
+}
+.music-content{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.music-list{
+    height: 600px;
+    width: fit-content;
+    border: 2px solid whitesmoke;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.music-list span{
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#listMusic{
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    
+}
+#listMusic::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+}
+#listMusic img{
+    width: 250px;
+    height: 250px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#listMusic img:hover{
+    border: 3px solid white;
+}
+#listMusic img:focus{
+    box-shadow: 0 0 15px 5px yellow;
+}
+.music-info{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.music-info img{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border: 3px solid white;
+    animation: rotate 2s forwards;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+#info{
+    color: white;
+}
+#info .bxs-circle{
+    display: inline;
+    margin-left: 10px;
+}
+#info h2{
+    margin-bottom: 30px;
+    text-decoration: underline;
+    font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    display: inline-block;
+}
+#info p{
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: monospace;
+}
+.prog p{
+    display: inline-flex;
+    color: white;
+}
+.prog #start{
+    margin-right: 670px;
+}
+#progress-bar{
+    margin-top: 10px;
+    background-color: whitesmoke;
+    height: 5px;
+    width: 100%;
+    border-radius: 100px;
+    margin-bottom: 15px;
+}
+.controller{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    color: white;
+    background-color: transparent;
+    border-radius: 100px;
+    border: 1px solid white;
+}
+.controller .bx{
+    font-size: 25px;
+    cursor: pointer;
+}
+.controller p{
+    position: absolute;
+    left: 1163px;
+    font-size: 10px;
+    top:656px;
+    display: none;
+}
+.bx-pause-circle{
+    display: none;
+}
+.bx-repeat{
+    position: relative;
+}
+@media screen and (max-width:1366px) {
+    .music-content{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    .music-content{
+        width: 100%;
+        text-align: center;
+    }
+    #listMusic{
+        flex-direction: row;
+        gap: 50px;
+        overflow-y: auto;
+        width: 800px;
+
+    }
+    
+}
+@media  screen and (max-width:390px) {
+
+    .music-content{
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    #listMusic{
+        flex-direction: column;
+        gap: 50px;
+    width: 260px;
+
+    }
+    .music-content{
+        
+        text-align: center;
+    }
+    .music-info img{
+        display: none;
+    }
+    .music-info{
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 40px;
+        justify-content: center;
+        margin-left: 100px;
+        width: 500px;
+    }
+    .controller{
+        margin-bottom: 30px;
+    }
+}
