@@ -18,11 +18,11 @@ let isPlaying = false;
 })*/
 
 const listMusic = [
-    './music/teboho_moloi_modimo_wa_boikanyo_visualizer_mp3_52661.mp3',
-    './music/teboho_moloi_o_mosa_o_mohau_visualizer_mp3_52621.mp3',
-    './music/teboho_moloi_o_mpha_tsohle_visualizer_mp3_52649.mp3',
-    './music/teboho_moloi_prayer_visualizer_mp3_52686.mp3',
-    './music/Ed Sheeran - Dive [Official Audio].mp3'
+    './teboho_moloi_modimo_wa_boikanyo_visualizer_mp3_52661.mp3',
+    './teboho_moloi_o_mosa_o_mohau_visualizer_mp3_52621.mp3',
+    './teboho_moloi_o_mpha_tsohle_visualizer_mp3_52649.mp3',
+    './teboho_moloi_prayer_visualizer_mp3_52686.mp3',
+    './Ed Sheeran - Dive [Official Audio].mp3'
 ];
 const artistNames = [
     'TEBOHO MOLOYI',
