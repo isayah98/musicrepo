@@ -8,6 +8,8 @@ const prev = document.querySelector(".bx-skip-previous");
 const nexts = document.querySelector(".bx-skip-next");
 const currentTimeDisplay = document.getElementById("start");
 const totalDurationDisplay = document.getElementById("end");
+const progBar = document.getElementById("progress-bar");
+const progressCont = document.getElementById("progress-container");
 
 let indexn =0;
 let playMyMusic = new Audio();
@@ -52,6 +54,34 @@ musicImage.forEach((musicImg, index) =>{
        musicTitle.innerHTML = muscNames[indexn];
     });
 });
+function setVolume(volControl){
+    if(volControl === true){
+        console.log("music is playing")
+        playMyMusic.volume = 0.5;
+    } 
+}
+
+function updateProgressBar(e) {
+    const rect = progressCont.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const percentage = Math.max(0, Math.min(offsetX / rect.width, 1));
+    progBar.style.width = `${percentage * 100}%`;
+    playMyMusic.currentTime = percentage * playMyMusic.duration;
+}
+
+progressCont.addEventListener("click", updateProgressBar);
+
+progressCont.addEventListener("mousedown", function (e) {
+    isDragging = true;
+    updateProgressBar(e);
+});
+document.addEventListener("mousemove", function (e) {
+    if (isDragging) updateProgressBar(e);
+});
+
+document.addEventListener("mouseup", function () {
+    isDragging = false;
+});
 
 function formatTime(seconds) {
     let minutes = Math.floor(seconds / 60);
@@ -66,8 +96,12 @@ function musicPlay(){
     }
     setInterval(() => {
         currentTimeDisplay.innerText = formatTime(playMyMusic.currentTime);
+        const progress = (playMyMusic.currentTime / playMyMusic.duration) * 100;
+        progBar.style.width = progress + "%";
     }, 1000);
     isPlaying =true;
+    setVolume(isPlaying);
+
     
 }
 function musicPause(){
@@ -173,5 +207,5 @@ prev.addEventListener("click", function(){
         artistName.innerHTML = artistNames[nextSong];
        musicTitle.innerHTML = muscNames[nextSong];
     }
-        
+    
 })
