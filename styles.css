@@ -4,12 +4,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 .music-container{
     background: linear-gradient(to right, pink, blue);
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    overflow-y: hidden;
+    
 }
 .music-container .heading{
     text-align: center;
@@ -170,12 +173,12 @@
     font-size: 25px;
     cursor: pointer;
 }
-.controller p{
+#on-repeat{
     position: absolute;
-    left: 1163px;
+    left: 1110px;
     font-size: 10px;
     top:656px;
-    display: none;
+    visibility: hidden;
 }
 .bx-pause-circle{
     display: none;
@@ -201,7 +204,7 @@
     font-size: 20px;
 }
 .bxs-volume-mute, .bxs-volume-low, .bxs-volume-full{
-    display: none;
+    visibility: hidden;
 }
 .volume-controller{
     display: flex;
