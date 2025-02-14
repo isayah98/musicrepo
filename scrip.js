@@ -202,7 +202,7 @@ function musicPause(){
 
 player.addEventListener("click", function(){
     player.style.display ="none";
-    playPause.style.display ="block musicPause();";
+    playPause.style.display ="block";
     musicPlay();
     
 });
@@ -352,7 +352,7 @@ setInterval(() => { /*loopingg to test if the repeat button is clicked or not*/
 setInterval(() =>{
     if(isPlaying)
     {
-         keepTrack = formatTime(playMyMusic.currentTime);
+         keepTrack = playMyMusic.currentTime;
     }
     
 },1000);
