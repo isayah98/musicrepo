@@ -88,12 +88,14 @@ function updatevolume(e){
         document.querySelector(".bxs-volume").style.visibility = "hidden";
         document.querySelector(".bxs-volume-full").style.visibility = "hidden";
         document.querySelector(".bxs-volume-low").style.visibility = "visible";
+        document.querySelector(".bxs-volume-mute").style.visibility = "hidden";
         playMyMusic.volume = 0.5;
     }
     else if(volSize <= 20 && volSize >= 10){
         document.querySelector(".bxs-volume").style.visibility = "visible";
         document.querySelector(".bxs-volume-full").style.visibility = "hidden";
         document.querySelector(".bxs-volume-low").style.visibility = "hidden";
+        document.querySelector(".bxs-volume-mute").style.visibility = "hidden";
         playMyMusic.volume = 0.1;
     }
     else if(volSize < 10){

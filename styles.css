@@ -4,15 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 .music-container{
     background: linear-gradient(to right, pink, blue);
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    overflow-y: hidden;
-    
 }
 .music-container .heading{
     text-align: center;
@@ -188,23 +185,14 @@
 }
 
 
-/*#volume-icons{
-    background-color: aliceblue;
-    padding: 15px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    position: relative;
-    display: inline-flex;
-}*/
 .volume-controller .bx{
     position: absolute;
     color: white;
-    bottom: -441px;
-    font-size: 20px;
+   
 }
-.bxs-volume-mute, .bxs-volume-low, .bxs-volume-full{
+.bxs-volume-mute, .bxs-volume-low, .bxs-volume{
     visibility: hidden;
+    
 }
 .volume-controller{
     display: flex;
@@ -260,36 +248,47 @@
     }
     
 }
-@media  screen and (max-width:390px) {
+@media screen and (max-width: 430px) {
 
-    .music-content{
+    .music-container {
+        background: linear-gradient(to right, pink, blue);
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .music-content {
         flex-direction: column;
         align-items: center;
         gap: 50px;
-    }
-    #listMusic{
-        flex-direction: column;
-        gap: 50px;
-    width: 260px;
-
-    }
-    .music-content{
-        
         text-align: center;
     }
-    .music-info img{
+
+    #listMusic {
+        flex-direction: column;
+        gap: 50px;
+        width: 260px;
+    }
+
+    .music-info img {
         display: none;
     }
-    .music-info{
+
+    .music-info {
         display: flex;
+        flex-direction: column;  /* Stack elements vertically */
         gap: 40px;
         align-items: center;
-        margin-bottom: 40px;
         justify-content: center;
-        margin-left: 100px;
-        width: 500px;
+        width: 100%;  /* Responsive width */
+        max-width: 300px;  /* Ensures it doesn't get too wide */
+        margin: 0 auto;  /* Centers content */
     }
-    .controller{
+
+    .controller {
         margin-bottom: 30px;
     }
 }
